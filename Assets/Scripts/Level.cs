@@ -2,7 +2,7 @@
 
 public class Level : MonoBehaviour
 {
-    [SerializeField] private int blockCount;
+    [SerializeField] public int blockCount;
 
     private GameObject[] levelBlocks;
 
@@ -21,9 +21,5 @@ public class Level : MonoBehaviour
     public void RemoveBlockFromCount()
     {
         blockCount -= 1;
-
-        if (blockCount == 0)
-        {
-        }
     }
 }
