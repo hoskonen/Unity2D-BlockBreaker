@@ -2,20 +2,30 @@
 
 public class Level : MonoBehaviour
 {
+    // parameters
     [SerializeField] public int blockCount;
 
-    private GameObject[] levelBlocks;
+    // cached reference
+    private SceneLoader sceneLoader;
 
     private void Start()
     {
-        GetAllLevelBlocks();
+        sceneLoader = FindObjectOfType<SceneLoader>();
     }
 
-    int GetAllLevelBlocks()
+    public void CountBreakableBlocks()
     {
-        levelBlocks = GameObject.FindGameObjectsWithTag("Block");
-        blockCount = levelBlocks.Length;
-        return blockCount;
+        blockCount++;
+    }
+
+    public void BlockDestroyed()
+    {
+        blockCount--;
+
+        if (blockCount <= 0)
+        {
+            sceneLoader.LoadNextScene();
+        }
     }
 
     public void RemoveBlockFromCount()

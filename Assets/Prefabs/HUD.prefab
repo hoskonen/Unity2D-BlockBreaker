@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 8771115056812574034}
   - component: {fileID: 8771115056812574032}
   - component: {fileID: 8771115056812574035}
-  - component: {fileID: 8771115056812574037}
   m_Layer: 5
   m_Name: BlocksLeft
   m_TagString: Untagged
@@ -156,20 +155,6 @@ MonoBehaviour:
   - {fileID: 0}
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!114 &8771115056812574037
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8771115056812574036}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f1c81fc0012bc0478cca0b603fb8488, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  blockLeft: {fileID: 0}
-  level: {fileID: 0}
 --- !u!1 &8771115057125529868
 GameObject:
   m_ObjectHideFlags: 0
