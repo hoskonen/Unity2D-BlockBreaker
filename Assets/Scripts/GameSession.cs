@@ -1,7 +1,7 @@
 ﻿using TMPro;
 using UnityEngine;
 
-public class GameStatus : MonoBehaviour
+public class GameSession : MonoBehaviour
 {
     [Range(0.1f, 10f)] [SerializeField] private float gameSpeed = 1f;
     [SerializeField] private int pointsPerBlockDestroyed = 83;
@@ -13,7 +13,7 @@ public class GameStatus : MonoBehaviour
     //
     private void Awake()
     {
-        int gameStatusCount = FindObjectsOfType<GameStatus>().Length;
+        int gameStatusCount = FindObjectsOfType<GameSession>().Length;
 
         if (gameStatusCount > 1)
         {
