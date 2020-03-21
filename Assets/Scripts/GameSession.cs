@@ -8,7 +8,7 @@ public class GameStatus : MonoBehaviour
     [SerializeField] public TextMeshProUGUI scoreText;
 
     // State variables
-    [SerializeField] public int currentPlayerScore = 0;
+    [SerializeField] public static int currentPlayerScore = 0;
 
     //
     private void Awake()
@@ -17,12 +17,14 @@ public class GameStatus : MonoBehaviour
 
         if (gameStatusCount > 1)
         {
+            gameObject.SetActive(false);
             Destroy(gameObject);
         }
         else
         {
             // Don't destroy GameStatus gameObject when we load another scene!
             DontDestroyOnLoad(gameObject);
+            Debug.Log(gameObject.GetInstanceID());
         }
     }
 
@@ -40,5 +42,13 @@ public class GameStatus : MonoBehaviour
     {
         currentPlayerScore += pointsPerBlockDestroyed;
         scoreText.text = currentPlayerScore.ToString();
+    }
+
+    public void ResetScore()
+    {
+        gameObject.SetActive(false);
+        Destroy(gameObject);
+        currentPlayerScore = 0;
+        Debug.Log(gameObject.GetInstanceID());
     }
 }
